@@ -15,7 +15,7 @@ export const useStyles = (colors) => StyleSheet.create({
     ,
     titleText: {
         color: colors.textPrimary,
-        fontSize:
-            20,
+        fontSize: 20,
+        fontFamily: 'Bitter-LightItalic'
     }
 });

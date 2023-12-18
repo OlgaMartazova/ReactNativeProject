@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, Text, Button, Linking, StyleSheet } from "react-native";
+import { View, Text, Button, Linking, StyleSheet, TouchableOpacity } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -46,6 +46,9 @@ const TabNavigation = () => {
                     height: 60,
                     paddingBottom: 10,
                     paddingTop: 10,
+                },
+                tabBarLabelStyle: {
+                    fontFamily: 'Bitter-LightItalic'
                 }
             }} />
             <Tab.Screen name={news} component={NewsScreen} options={{
@@ -59,7 +62,8 @@ const TabNavigation = () => {
                 headerTitleAlign: 'center',
                 headerStyle: { backgroundColor: colors.overlay },
                 headerTitleStyle: {
-                    color: colors.textPrimary
+                    color: colors.textPrimary,
+                    fontFamily: 'Bitter-LightItalic'
                 },
                 headerShadowVisible: false,
                 tabBarStyle: {
@@ -67,6 +71,9 @@ const TabNavigation = () => {
                     height: 60,
                     paddingBottom: 10,
                     paddingTop: 10,
+                },
+                tabBarLabelStyle: {
+                    fontFamily: 'Bitter-LightItalic'
                 }
             }} />
             <Tab.Screen name={chat} component={ChatScreen} options={{
@@ -80,7 +87,8 @@ const TabNavigation = () => {
                 headerTitleAlign: 'center',
                 headerStyle: { backgroundColor: colors.overlay },
                 headerTitleStyle: {
-                    color: colors.textPrimary
+                    color: colors.textPrimary,
+                    fontFamily: 'Bitter-LightItalic'
                 },
                 headerShadowVisible: false,
                 tabBarStyle: {
@@ -88,6 +96,9 @@ const TabNavigation = () => {
                     height: 60,
                     paddingBottom: 10,
                     paddingTop: 10,
+                },
+                tabBarLabelStyle: {
+                    fontFamily: 'Bitter-LightItalic'
                 }
             }} />
             <Tab.Screen name={settings} component={SettingsScreen} options={{
@@ -101,7 +112,8 @@ const TabNavigation = () => {
                 headerTitleAlign: 'center',
                 headerStyle: { backgroundColor: colors.overlay },
                 headerTitleStyle: {
-                    color: colors.textPrimary
+                    color: colors.textPrimary,
+                    fontFamily: 'Bitter-LightItalic'
                 },
                 headerShadowVisible: false,
                 tabBarStyle: {
@@ -109,6 +121,9 @@ const TabNavigation = () => {
                     height: 60,
                     paddingBottom: 10,
                     paddingTop: 10,
+                },
+                tabBarLabelStyle: {
+                    fontFamily: 'Bitter-LightItalic'
                 }
             }} />
         </Tab.Navigator>
@@ -148,11 +163,14 @@ const HomeStack = observer(() => {
                     headerTitle: () =>
                         <Icon type="ionicon" name="heart-half" color={colors.changeThemeIcon} onPress={() => handleChangeTheme()} />,
                     headerRight: () => (
-                        <Button
+                        <TouchableOpacity
                             onPress={() => props.navigation.navigate('About')}
-                            title={t('main.tabs.home.button')}
-                            color={colors.buttonTertiary}
-                        />
+                            style={{ backgroundColor: colors.buttonTertiary, padding: 8 }}
+                        >
+                            <Text style={{ fontFamily: 'Bitter-LightItalic', color: colors.textSecondary }}>
+                                {t('main.tabs.home.button')}
+                            </Text>
+                        </TouchableOpacity>
                     )
                 })}
             />
@@ -162,7 +180,8 @@ const HomeStack = observer(() => {
                     headerStyle: { backgroundColor: colors.overlay },
                     headerShadowVisible: false,
                     headerTitleStyle: {
-                        color: colors.textPrimary
+                        color: colors.textPrimary,
+                        fontFamily: 'Bitter-LightItalic'
                     },
                     headerTintColor: colors.textPrimary
                 }} />
